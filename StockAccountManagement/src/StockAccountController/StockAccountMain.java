@@ -14,38 +14,47 @@ public class StockAccountMain {
     public static void main(String[] args) {
         JSONArray jsonArray = new JSONArray();
         boolean flag = true;
+        int count = 0;
 
         while (flag) {
             int choice = UserInputOutput.getUserChoice();
             switch (choice) {
                 case 1:
-                    System.out.println("\n" + "Buy stocks");
-                    System.out.print("Enter the name of the share: ");
+                    System.out.println("\n" + "Insert Stocks");
+                    jsonArray = stockAccountService.insertShare(jsonArray);
+                    System.out.println("Number of stocks inserted is " +(++count) + "\n");
+                    flag = true;
+                    break;
+                case 2:
+                    System.out.println("\n" + "Buy Stocks");
+                    System.out.print("Enter the name of the company you want to buy share from: ");
                     String companyName = input.next();
                     jsonArray = stockAccountService.buyShare(companyName, jsonArray);
                     flag = true;
                     break;
-                case 2:
-                    System.out.println("\n" + "Sell stocks");
-                    jsonArray = stockAccountService.sellShare(jsonArray);
+                case 3:
+                    System.out.println("\n" + "Sell Stocks");
+                    System.out.print("Enter the name of the company you want to sell the shares to: ");
+                    String companyNameSell = input.next();
+                    jsonArray = stockAccountService.sellShare(companyNameSell, jsonArray);
                     flag = true;
                     break;
-                case 3:
+                case 4:
                     System.out.println("\n" + "Display stocks");
                     stockAccountService.display(jsonArray);
                     flag = true;
                     break;
-                case 4:
+                case 5:
                     System.out.println("\n" + "Calculate each value stocks");
                     stockAccountService.calculateEachValue(jsonArray);
                     flag = true;
                     break;
-                case 5:
+                case 6:
                     System.out.println("\n" + "Calculate total value stocks");
                     stockAccountService.calculateTotalValue(jsonArray);
                     flag = true;
                     break;
-                case 6:
+                case 7:
                     flag = false;
                     break;
 
