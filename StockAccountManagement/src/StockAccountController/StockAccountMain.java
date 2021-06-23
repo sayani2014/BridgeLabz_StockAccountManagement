@@ -1,3 +1,15 @@
+/**
+ * Write a program to read in Stock Names, Number of Share, Share Price. Print a Stock Report with the total value of each Stock and the total value of Stock.
+ * Input is Share Name, Number of Share, and Share Price.
+ * Calculate the value of each stock and the total value.
+ * Store the output in json format and print the json array in console.
+ * Add the buy and sell of shares.
+ *
+ * @author: SAYANI KOLEY
+ * @since: 20.06.2021
+ */
+
+
 package StockAccountController;
 
 import StockAccountService.StockAccountService;
